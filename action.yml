@@ -1,0 +1,12 @@
+name: 'Publish Gem to GitHub Packages'
+description: 'Builds and publishes Ruby gems to GitHub Packages'
+author: 'Appfolio, Inc.'
+inputs:
+  token:
+    description: 'GitHub token that has access to write to GitHub package registry. You can use GITHUB_TOKEN for this.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
